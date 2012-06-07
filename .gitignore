@@ -1,4 +1,4 @@
- always-ignore extensions
+ # Numberous always-ignore extensions
 *.diff
 *.err
 *.orig
@@ -16,4 +16,4 @@
 .settings
 nbproject
 thumbs.db
-
+node_modules
