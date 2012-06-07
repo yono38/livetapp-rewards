@@ -4,7 +4,7 @@ var User = mongoose.model('User')
 
 module.exports = function (app) {
 
-  app.param('earnedRewardId', function (req, res, next, id) {
+  app.param('rewardId', function (req, res, next, id) {
 		EarnedReward
 			.findOne({_id : id })
 			.run(function(err, earned_reward){
@@ -32,6 +32,6 @@ module.exports = function (app) {
 			})
 	})
 
-	app.post('/:earnedRewardId/earn', function(req, res){
+	app.post('/:rewardId/earn', function(req, res){
 			// check if user eligible for reward (not used and not owned same type already)
 	})
