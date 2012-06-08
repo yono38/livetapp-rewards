@@ -23,7 +23,7 @@ UserSchema.add({
   , location: {
       name: String
     }
-  , earnedRewards [EarnedReward]
+  , earnedRewards : [EarnedReward]
   , created_at  : {type : Date, default : Date.now}
 })
 

@@ -30,7 +30,6 @@ module.exports = function (app) {
 	
   // Signup by email
   app.get('/signup', function (req, res) {
-
 		res.render('users/signup', {
 
 		})
@@ -43,13 +42,17 @@ module.exports = function (app) {
   })
 
   // Profile view
-  app.get('/mytapp/:profileId', auth.requiresLogin function (req, res) {
+  app.get('/mytapp/:profileId', auth.requiresLogin, function (req, res) {
     var user = req.foundUser
     res.render('users/profile', {
-			user: user
+		user: user
       , earned_rewards : rewards
     })
   })
+
+  app.get('/mytapp', auth.requiresLogin, function (req, res){
+	res.redirect('/mytapp/'+req.session.auth.userId);
+  }
 
 
 }

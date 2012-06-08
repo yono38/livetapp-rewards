@@ -1,6 +1,7 @@
 
 /*
  *  Generic require login routing middleware
+ *  TODO Learn how to keep ?params when redirecting
  */
 
 exports.requiresLogin = function (req, res, next) {
@@ -9,7 +10,12 @@ exports.requiresLogin = function (req, res, next) {
     res.redirect('/login')
   }
   next()
-};
+}
+
+// TODO understand how to write this
+exports.requiresAdmin = function (req, res, next) {
+	next()
+}
 
 
 /*
